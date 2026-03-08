@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // ── Active Nav Link ───────────────────────────────────────
 (function markActiveNav() {
-  const current = window.location.pathname.split('/').pop() || 'accueil.html';
+  const current = window.location.pathname.split('/').pop() || 'index.html';
   document.querySelectorAll('.nav-links a').forEach(link => {
     if (link.getAttribute('href') === current) link.classList.add('active');
   });

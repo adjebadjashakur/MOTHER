@@ -45,7 +45,7 @@ pour célébrer trois dates précieuses :
 ```
 📁 site-maman/
 │
-├── 🏠  accueil.html          ← Page d'accueil avec les 3 dates
+├── 🏠  index.html          ← Page d'accueil avec les 3 dates
 ├── 🌍  femme.html            ← Hommage au 8 Mars
 ├── 🎂  anniversaire.html     ← Joyeux Anniversaire (9 Mars)
 ├── 💐  maman.html            ← Qui elle est vraiment
@@ -95,7 +95,7 @@ Copie les photos dans le dossier `images/` et renomme-les exactement comme ci-de
 
 ```
 images/
-  ├── maman1.jpg      → apparaît sur accueil.html
+  ├── maman1.jpg      → apparaît sur index.html
   ├── maman2.jpg      → apparaît sur femme.html (8 mars)
   ├── maman3.jpg      → apparaît sur anniversaire.html
   ├── maman4.jpg      → apparaît sur maman.html
@@ -116,9 +116,9 @@ images/
 
 ```bash
 # Double-clic sur le fichier, ou via terminal :
-open accueil.html          # macOS
-start accueil.html         # Windows
-xdg-open accueil.html      # Linux
+open index.html          # macOS
+start index.html         # Windows
+xdg-open index.html      # Linux
 ```
 
 ---
@@ -369,7 +369,7 @@ Dans `style.css`, modifie les variables CSS en haut du fichier :
 |:--------|:------:|:------------|
 | `style.css` | ~14 Ko | Tous les styles |
 | `script.js` | ~4 Ko | Animations et logique |
-| `accueil.html` | ~5 Ko | Page d'accueil |
+| `index.html` | ~5 Ko | Page d'accueil |
 | `femme.html` | ~5 Ko | 8 Mars |
 | `anniversaire.html` | ~5 Ko | Anniversaire |
 | `maman.html` | ~5 Ko | Fête des mères |

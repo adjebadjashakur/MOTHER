@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pour Maman — Joyeux Anniversaire</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .candles-row {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      font-size: 2rem;
+      margin: 1.5rem 0;
+      animation: flicker 2s ease-in-out infinite alternate;
+    }
+    @keyframes flicker {
+      0%   { filter: brightness(1); }
+      100% { filter: brightness(1.3) drop-shadow(0 0 10px gold); }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" href="accueil.html">Pour <span>Maman</span></a>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="accueil.html">Accueil</a></li>
+      <li><a href="femme.html">8 Mars</a></li>
+      <li><a href="anniversaire.html">Anniversaire</a></li>
+      <li><a href="maman.html">Maman</a></li>
+      <li><a href="souvenirs.html">Souvenirs</a></li>
+      <li><a href="gratitude.html">Gratitude</a></li>
+      <li><a href="sagesse.html">Sagesse</a></li>
+      <li><a href="amour.html">Amour</a></li>
+      <li><a href="priere.html">🤲 Prière</a></li>
+      <li><a href="longevite.html">🌿 Longévité</a></li>
+      <li><a href="final.html">✦ Final</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="page-wrapper">
+
+  <section class="hero-banner">
+    <div class="hero-badge">🎂 9 Mars — Ton Anniversaire</div>
+    <h1 class="hero-title">
+      <em>Joyeux Anniversaire</em>,<br>
+      belle Maman
+    </h1>
+    <p class="hero-subtitle">Ce jour où tu es née est devenu le plus beau jour du calendrier</p>
+    <div class="candles-row">🕯️🎂🕯️🎂🕯️🎂🕯️</div>
+    <div class="hero-divider"><span>✦</span></div>
+  </section>
+
+  <section class="content-section">
+    <div class="content-grid reverse">
+      <div class="photo-col">
+        <div class="photo-frame">
+          <img src="images/maman3.jpg" alt="Maman, joyeux anniversaire">
+          <div class="photo-ornament"></div>
+          <div class="photo-ornament-2"></div>
+        </div>
+        <p class="photo-label">La plus belle des anniversaires ✦</p>
+      </div>
+      <div class="text-col">
+        <span class="text-tag">✦ 9 Mars</span>
+        <h2 class="text-heading">
+          Chaque année qui passe<br>
+          te rend <em>plus précieuse</em>
+        </h2>
+        <div class="poem-block">
+          <p>
+            Ce jour-là, quelque part dans le monde,<br>
+            une étoile a brillé plus fort que les autres.<br>
+            C'était le signe que tu venais d'arriver —<br>
+            toi, la lumière de notre vie.<br><br>
+            Joyeux anniversaire, Maman.<br>
+            Que chaque souffle de tes bougies<br>
+            porte un vœu que le ciel exaucera.
+          </p>
+        </div>
+        <div class="prose-block">
+          <p>
+            Aujourd'hui, je ne te souhaite pas seulement une belle journée.
+            Je te souhaite une vie entière de joies, de santé et de moments doux
+            qui font battre le cœur plus vite.
+          </p>
+          <p>
+            Tu as donné vie à tant d'autres à travers les tiennes.
+            Aujourd'hui, la vie te célèbre en retour.
+          </p>
+        </div>
+        <div class="gold-quote">"Tu n'as pas d'âge — tu as de la profondeur, de la beauté, et de l'amour à revendre."</div>
+      </div>
+    </div>
+
+    <div class="cards-grid">
+      <div class="card">
+        <div class="card-icon">🎁</div>
+        <div class="card-title">Mon Vœu</div>
+        <div class="card-text">Que chaque journée de cette nouvelle année t'apporte autant de bonheur que tu en as offert aux autres.</div>
+      </div>
+      <div class="card">
+        <div class="card-icon">🌷</div>
+        <div class="card-title">Ma Prière</div>
+        <div class="card-text">Que tu sois toujours entourée de ceux qui t'aiment, protégée par la grâce, comblée par la vie.</div>
+      </div>
+      <div class="card">
+        <div class="card-icon">🎶</div>
+        <div class="card-title">Ma Chanson</div>
+        <div class="card-text">Si ma vie était une mélodie, tu en serais le refrain — celui qu'on ne se lasse jamais de chanter.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="surprise-section">
+    <button id="btn-surprise">💌 Message surprise pour Maman</button>
+    <div id="surprise-message"></div>
+  </section>
+
+  <div class="page-nav-footer">
+    <a class="btn-nav" href="femme.html">← 8 Mars</a>
+    <a class="btn-nav" href="maman.html">Suivant — Maman →</a>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

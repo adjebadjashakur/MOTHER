@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pour Maman — Prière Islamique</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* ── Arabic text styling ── */
+    .arabic-block {
+      background: linear-gradient(135deg, rgba(201,168,76,0.08), rgba(195,174,224,0.12));
+      border: 1px solid rgba(201,168,76,0.3);
+      border-radius: 20px;
+      padding: 2rem 2.5rem;
+      margin: 1.8rem 0;
+      text-align: center;
+    }
+
+    .arabic-text {
+      font-family: 'Amiri', 'Traditional Arabic', 'Arabic Typesetting', 'Scheherazade New', serif;
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      direction: rtl;
+      line-height: 2.2;
+      color: var(--gold);
+      margin-bottom: 0.8rem;
+      text-shadow: 0 1px 3px rgba(201,168,76,0.2);
+    }
+
+    .arabic-transliteration {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1rem;
+      color: var(--text-light);
+      margin-bottom: 0.5rem;
+    }
+
+    .arabic-traduction {
+      font-size: 0.88rem;
+      font-weight: 400;
+      letter-spacing: 0.03em;
+      color: var(--text-mid);
+      background: rgba(255,255,255,0.6);
+      display: inline-block;
+      padding: 0.3rem 1rem;
+      border-radius: 20px;
+    }
+
+    .dua-card {
+      background: rgba(255,255,255,0.75);
+      border-radius: 20px;
+      padding: 2rem;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 6px 25px rgba(180,100,130,0.12);
+      border: 1px solid rgba(201,168,76,0.2);
+      margin-bottom: 1.5rem;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .dua-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .dua-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 14px 40px rgba(180,100,130,0.18);
+    }
+
+    .dua-number {
+      display: inline-block;
+      width: 32px;
+      height: 32px;
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      color: white;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 32px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      margin-bottom: 0.8rem;
+    }
+
+    .star-separator {
+      text-align: center;
+      color: var(--gold);
+      letter-spacing: 0.8rem;
+      font-size: 1rem;
+      margin: 2.5rem 0;
+      opacity: 0.6;
+    }
+
+    .crescent-icon {
+      font-size: 3rem;
+      display: block;
+      text-align: center;
+      margin-bottom: 1rem;
+      animation: glow-moon 3s ease-in-out infinite;
+    }
+
+    @keyframes glow-moon {
+      0%, 100% { filter: drop-shadow(0 0 8px rgba(201,168,76,0.4)); }
+      50%       { filter: drop-shadow(0 0 20px rgba(201,168,76,0.8)); }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" href="accueil.html">Pour <span>Maman</span></a>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="accueil.html">Accueil</a></li>
+      <li><a href="femme.html">8 Mars</a></li>
+      <li><a href="anniversaire.html">Anniversaire</a></li>
+      <li><a href="maman.html">Maman</a></li>
+      <li><a href="souvenirs.html">Souvenirs</a></li>
+      <li><a href="gratitude.html">Gratitude</a></li>
+      <li><a href="sagesse.html">Sagesse</a></li>
+      <li><a href="amour.html">Amour</a></li>
+      <li><a href="priere.html">🤲 Prière</a></li>
+      <li><a href="longevite.html">🌿 Longévité</a></li>
+      <li><a href="final.html">✦ Final</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="page-wrapper">
+
+  <section class="hero-banner">
+    <div class="hero-badge">🤲 Du'â — Supplications pour Maman</div>
+    <span class="crescent-icon">☪️</span>
+    <h1 class="hero-title">
+      Mes <em>prières</em><br>
+      pour toi, Maman
+    </h1>
+    <p class="hero-subtitle">Que Allah te protège, te bénisse et t'accorde le meilleur en ce monde et dans l'au-delà</p>
+    <div class="hero-divider"><span>✦</span></div>
+  </section>
+
+  <section class="content-section">
+    <div class="content-grid">
+      <div class="photo-col">
+        <div class="photo-frame">
+          <img src="images/maman9.jpg" alt="Maman bénie">
+          <div class="photo-ornament"></div>
+          <div class="photo-ornament-2"></div>
+        </div>
+        <p class="photo-label">Sous la bénédiction d'Allah ✦</p>
+      </div>
+      <div class="text-col">
+        <span class="text-tag">✦ La prière du cœur</span>
+        <h2 class="text-heading">
+          <em>Ya Allah</em>,<br>
+          prends soin d'elle
+        </h2>
+
+        <!-- Ayat from Quran -->
+        <div class="arabic-block">
+          <div class="arabic-text">رَّبِّ ارْحَمْهُمَا كَمَا رَبَّيَانِي صَغِيرًا</div>
+          <div class="arabic-transliteration">Rabbir ḥam-humā kamā rabbayānī ṣaghīrā</div>
+          <div class="arabic-traduction">« Seigneur, prends-les en pitié comme ils m'ont élevé tout petit. » — Sourate Al-Isra, verset 24</div>
+        </div>
+
+        <div class="prose-block">
+          <p>
+            Allah عز وجل a placé le paradis sous les pieds des mères.
+            Toi, Maman, tu portes en toi cette lumière divine qui se reflète
+            dans chacun de tes gestes, dans chacune de tes prières pour nous.
+          </p>
+          <p>
+            Je lève les mains vers le ciel et je supplie Allah
+            de te couvrir de Sa miséricorde infinie,
+            de te garder en bonne santé, de te protéger de tout mal,
+            et de te combler de Sa grâce ici-bas et dans l'au-delà.
+          </p>
+        </div>
+        <div class="gold-quote">"Le paradis se trouve sous les pieds des mères." — Hadith</div>
+      </div>
+    </div>
+
+    <div class="star-separator">✦ ✦ ✦</div>
+
+    <!-- Du'ât Cards -->
+    <h2 class="text-heading" style="text-align:center; margin-bottom: 2rem;">
+      Mes supplications pour <em>toi</em>
+    </h2>
+
+    <div class="dua-card">
+      <div class="dua-number">1</div>
+      <div class="arabic-block" style="margin: 0.5rem 0 1rem;">
+        <div class="arabic-text">اللَّهُمَّ اغْفِرْ لِي وَلِوَالِدَيَّ وَارْحَمْهُمَا كَمَا رَبَّيَانِي صَغِيرًا</div>
+        <div class="arabic-transliteration">Allāhumma ghfir lī wa liwālidayya warḥam-humā kamā rabbayānī ṣaghīrā</div>
+        <div class="arabic-traduction">« Ô Allah, pardonne-moi ainsi qu'à mes parents et prends-les en pitié comme ils m'ont élevé tout petit. »</div>
+      </div>
+      <div class="card-text" style="font-size:0.92rem; line-height:1.8; color: var(--text-mid); font-style:italic;">
+        C'est le du'â que je récite pour toi après chaque prière, Maman.
+        Que Allah te pardonne tous tes péchés et t'élève en degrés.
+      </div>
+    </div>
+
+    <div class="dua-card">
+      <div class="dua-number">2</div>
+      <div class="arabic-block" style="margin: 0.5rem 0 1rem;">
+        <div class="arabic-text">اللَّهُمَّ اشْفِهَا وَعَافِهَا وَبَارِكْ فِي عُمْرِهَا</div>
+        <div class="arabic-transliteration">Allāhumma ishfihā wa 'āfihā wa bārik fī 'umrihā</div>
+        <div class="arabic-traduction">« Ô Allah, guéris-la, donne-lui la santé et bénis sa vie. »</div>
+      </div>
+      <div class="card-text" style="font-size:0.92rem; line-height:1.8; color: var(--text-mid); font-style:italic;">
+        Que Allah te préserve de toute maladie, de toute peine,
+        et qu'Il bénisse chaque jour qu'Il t'accorde.
+      </div>
+    </div>
+
+    <div class="dua-card">
+      <div class="dua-number">3</div>
+      <div class="arabic-block" style="margin: 0.5rem 0 1rem;">
+        <div class="arabic-text">اللَّهُمَّ أَكْرِمْ مَثْوَاهَا وَوَسِّعْ مُدْخَلَهَا وَاغْسِلْهَا بِالْمَاءِ وَالثَّلْجِ وَالْبَرَدِ</div>
+        <div class="arabic-transliteration">Allāhumma akrim mathwāhā wa wassi' mudkhalahā...</div>
+        <div class="arabic-traduction">« Ô Allah, honore sa demeure, élargis son séjour, purifie-la... »</div>
+      </div>
+      <div class="card-text" style="font-size:0.92rem; line-height:1.8; color: var(--text-mid); font-style:italic;">
+        Que Allah te prépare une belle demeure dans l'au-delà
+        et te fasse entrer au paradis avec les justes, inna shaa Allah.
+      </div>
+    </div>
+
+    <div class="dua-card">
+      <div class="dua-number">4</div>
+      <div class="arabic-block" style="margin: 0.5rem 0 1rem;">
+        <div class="arabic-text">اللَّهُمَّ أَدْخِلْهَا الْجَنَّةَ وَأَعِذْهَا مِنَ النَّارِ</div>
+        <div class="arabic-transliteration">Allāhumma adkhil-hal jannata wa a'idh-hā minan-nār</div>
+        <div class="arabic-traduction">« Ô Allah, fais-la entrer au Paradis et préserve-la du Feu. »</div>
+      </div>
+      <div class="card-text" style="font-size:0.92rem; line-height:1.8; color: var(--text-mid); font-style:italic;">
+        C'est le plus grand vœu que je formule pour toi, Maman :
+        que ta fin soit belle et que Allah t'accueille dans Sa miséricorde.
+      </div>
+    </div>
+
+    <div class="star-separator">✦ ✦ ✦</div>
+
+    <div class="poem-block" style="max-width: 680px; margin: 0 auto;">
+      <p style="text-align:center;">
+        Maman, je ne sais pas toujours comment te montrer mon amour.<br>
+        Mais chaque nuit, dans le silence de ma prière,<br>
+        ton nom monte vers le ciel.<br><br>
+        Et j'espère que Allah t'accordera<br>
+        tout le bien que tu mérites —<br>
+        et tu en mérites infiniment.
+      </p>
+    </div>
+  </section>
+
+  <section class="surprise-section">
+    <button id="btn-surprise">💌 Message surprise pour Maman</button>
+    <div id="surprise-message"></div>
+  </section>
+
+  <div class="page-nav-footer">
+    <a class="btn-nav" href="amour.html">← Amour</a>
+    <a class="btn-nav" href="longevite.html">Suivant — Longévité →</a>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pour Maman — Amour</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .hearts-float {
+      text-align: center;
+      font-size: 1.8rem;
+      letter-spacing: 0.5rem;
+      margin: 1.5rem 0;
+      animation: pulse-hearts 3s ease-in-out infinite;
+    }
+    @keyframes pulse-hearts {
+      0%, 100% { transform: scale(1); opacity: 0.8; }
+      50%       { transform: scale(1.08); opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" href="accueil.html">Pour <span>Maman</span></a>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="accueil.html">Accueil</a></li>
+      <li><a href="femme.html">8 Mars</a></li>
+      <li><a href="anniversaire.html">Anniversaire</a></li>
+      <li><a href="maman.html">Maman</a></li>
+      <li><a href="souvenirs.html">Souvenirs</a></li>
+      <li><a href="gratitude.html">Gratitude</a></li>
+      <li><a href="sagesse.html">Sagesse</a></li>
+      <li><a href="amour.html">Amour</a></li>
+      <li><a href="priere.html">🤲 Prière</a></li>
+      <li><a href="longevite.html">🌿 Longévité</a></li>
+      <li><a href="final.html">✦ Final</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="page-wrapper">
+
+  <section class="hero-banner">
+    <div class="hero-badge">❤️ L'amour qui ne finit pas</div>
+    <h1 class="hero-title">
+      Je t'<em>aime</em>, Maman,<br>
+      au-delà des mots
+    </h1>
+    <p class="hero-subtitle">Un amour que ni le temps ni la distance ne peuvent effacer</p>
+    <div class="hearts-float">❤️ 💕 ❤️ 💗 ❤️ 💕 ❤️</div>
+    <div class="hero-divider"><span>✦</span></div>
+  </section>
+
+  <section class="content-section">
+    <div class="content-grid">
+      <div class="photo-col">
+        <div class="photo-frame">
+          <img src="images/maman8.jpg" alt="Mon amour pour Maman">
+          <div class="photo-ornament"></div>
+          <div class="photo-ornament-2"></div>
+        </div>
+        <p class="photo-label">Le visage de l'amour inconditionnel ✦</p>
+      </div>
+      <div class="text-col">
+        <span class="text-tag">✦ Pour toujours</span>
+        <h2 class="text-heading">
+          Cet amour que<br>
+          je ne sais pas <em>nommer</em>
+        </h2>
+        <div class="poem-block">
+          <p>
+            Il n'existe pas de mot assez grand<br>
+            pour ce que je ressens pour toi.<br>
+            "Je t'aime" — trois mots si petits<br>
+            pour un sentiment si immense.<br><br>
+            Alors je t'aime en silence,<br>
+            je t'aime dans chaque geste,<br>
+            je t'aime dans tout ce que je fais,<br>
+            parce que tout ce que je suis, c'est toi.
+          </p>
+        </div>
+        <div class="prose-block">
+          <p>
+            L'amour d'une mère est le seul amour au monde qui précède même la naissance.
+            Tu m'aimais avant même de me voir.
+            Et cet amour-là, je le porte en moi comme un feu qui ne s'éteint jamais.
+          </p>
+          <p>
+            Même les jours où la vie est difficile,
+            même quand nous sommes loin l'un de l'autre,
+            cet amour que tu m'as donné est ma boussole,
+            ma force, mon ancre.
+          </p>
+        </div>
+        <div class="gold-quote">"Si l'amour avait une adresse, ce serait la tienne."</div>
+      </div>
+    </div>
+
+    <div class="cards-grid">
+      <div class="card">
+        <div class="card-icon">♾️</div>
+        <div class="card-title">Sans Fin</div>
+        <div class="card-text">Mon amour pour toi n'a ni début ni fin. Il fait partie de moi comme le cœur fait partie du corps.</div>
+      </div>
+      <div class="card">
+        <div class="card-icon">🌊</div>
+        <div class="card-title">Profond</div>
+        <div class="card-text">Cet amour va plus loin que je ne peux mesurer. Comme l'océan, il a des profondeurs que l'on ne peut explorer.</div>
+      </div>
+      <div class="card">
+        <div class="card-icon">☀️</div>
+        <div class="card-title">Lumineux</div>
+        <div class="card-text">Ton amour est la lumière que je cherche instinctivement dans les moments d'obscurité. Il ne déçoit jamais.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="surprise-section">
+    <button id="btn-surprise">💌 Message surprise pour Maman</button>
+    <div id="surprise-message"></div>
+  </section>
+
+  <div class="page-nav-footer">
+    <a class="btn-nav" href="sagesse.html">← Sagesse</a>
+    <a class="btn-nav" href="priere.html">Suivant — Prière →</a>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pour Maman — Longévité & Santé</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* ── Age counter ── */
+    .vitality-banner {
+      background: linear-gradient(135deg, rgba(249,198,211,0.25), rgba(195,174,224,0.2));
+      border: 1px solid rgba(201,168,76,0.25);
+      border-radius: 24px;
+      padding: 2.5rem;
+      text-align: center;
+      margin: 2rem 0 3rem;
+      backdrop-filter: blur(8px);
+    }
+
+    .vitality-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      font-weight: 400;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+    }
+
+    .vitality-icons {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .vitality-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .vitality-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      box-shadow: 0 4px 16px rgba(180,100,130,0.15);
+    }
+
+    .vitality-item:nth-child(1) .vitality-icon { background: linear-gradient(135deg, #ffd6e7, #ffb3c6); }
+    .vitality-item:nth-child(2) .vitality-icon { background: linear-gradient(135deg, #d4f1c4, #a8e6cf); }
+    .vitality-item:nth-child(3) .vitality-icon { background: linear-gradient(135deg, #fde8b4, #f0d87a); }
+    .vitality-item:nth-child(4) .vitality-icon { background: linear-gradient(135deg, #d6e8ff, #b3d1f5); }
+    .vitality-item:nth-child(5) .vitality-icon { background: linear-gradient(135deg, #e8d6ff, #d4b3f5); }
+
+    .vitality-label {
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-light);
+      font-weight: 400;
+    }
+
+    /* ── Longevity wishes tree ── */
+    .wishes-tree {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.2rem;
+      margin: 2.5rem 0;
+    }
+
+    .wish-leaf {
+      background: rgba(255,255,255,0.78);
+      border-radius: 18px;
+      padding: 1.6rem;
+      box-shadow: 0 4px 20px rgba(180,100,130,0.1);
+      border: 1px solid rgba(201,168,76,0.15);
+      position: relative;
+      overflow: hidden;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .wish-leaf.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .wish-leaf:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 35px rgba(180,100,130,0.18);
+    }
+
+    .wish-leaf::before {
+      content: attr(data-number);
+      position: absolute;
+      top: -10px;
+      right: 12px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 4rem;
+      font-weight: 300;
+      color: rgba(201,168,76,0.08);
+      line-height: 1;
+      pointer-events: none;
+    }
+
+    .wish-leaf-icon { font-size: 1.8rem; margin-bottom: 0.8rem; display: block; }
+    .wish-leaf-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      margin-bottom: 0.6rem;
+    }
+    .wish-leaf-text {
+      font-size: 0.88rem;
+      line-height: 1.8;
+      color: var(--text-light);
+      font-style: italic;
+    }
+
+    /* ── Timeline ── */
+    .timeline {
+      position: relative;
+      padding-left: 2.5rem;
+      margin: 3rem 0;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0.6rem;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--rose), var(--gold), var(--violet));
+      border-radius: 2px;
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 2rem;
+      opacity: 0;
+      transform: translateX(-20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .timeline-item.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .timeline-dot {
+      position: absolute;
+      left: -2.1rem;
+      top: 0.3rem;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--rose-deep), var(--violet-deep));
+      box-shadow: 0 0 0 3px rgba(249,198,211,0.5);
+    }
+
+    .timeline-year {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.82rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.3rem;
+    }
+
+    .timeline-text {
+      font-size: 0.95rem;
+      line-height: 1.8;
+      color: var(--text-mid);
+    }
+
+    /* ── Slideshow ── */
+    .slideshow-container {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 3 / 4;   /* garde les proportions fixes */
+      overflow: hidden;
+      border-radius: inherit;
+    }
+
+    .slideshow-container .slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: inherit;
+      opacity: 0;
+      transition: opacity 1.2s ease-in-out;
+    }
+
+    .slideshow-container .slide.active {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" href="accueil.html">Pour <span>Maman</span></a>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="accueil.html">Accueil</a></li>
+      <li><a href="femme.html">8 Mars</a></li>
+      <li><a href="anniversaire.html">Anniversaire</a></li>
+      <li><a href="maman.html">Maman</a></li>
+      <li><a href="souvenirs.html">Souvenirs</a></li>
+      <li><a href="gratitude.html">Gratitude</a></li>
+      <li><a href="sagesse.html">Sagesse</a></li>
+      <li><a href="amour.html">Amour</a></li>
+      <li><a href="priere.html">🤲 Prière</a></li>
+      <li><a href="longevite.html">🌿 Longévité</a></li>
+      <li><a href="final.html">✦ Final</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="page-wrapper">
+
+  <section class="hero-banner">
+    <div class="hero-badge">🌿 Longévité · Santé · Bonheur</div>
+    <h1 class="hero-title">
+      Que tu vives<br>
+      <em>longtemps</em>, Maman
+    </h1>
+    <p class="hero-subtitle">Chaque année que la vie t'accorde est un cadeau pour nous tous</p>
+    <div class="hero-divider"><span>✦</span></div>
+  </section>
+
+  <section class="content-section">
+    <div class="content-grid reverse">
+      <div class="photo-col">
+        <div class="photo-frame">
+
+          <!-- ── SLIDESHOW AUTOMATIQUE ── -->
+          <div class="slideshow-container">
+            <img class="slide active" src="images/maman10.jpg"  alt="Maman, belle et rayonnante">
+            <img class="slide"        src="images/maman101.jpg" alt="Maman, belle et rayonnante">
+            <img class="slide"        src="images/maman110.jpg" alt="Maman, belle et rayonnante">
+          </div>
+          <!-- ──────────────────────────── -->
+
+          <div class="photo-ornament"></div>
+          <div class="photo-ornament-2"></div>
+        </div>
+        <p class="photo-label">Rayonnante, aujourd'hui et toujours ✦</p>
+      </div>
+      <div class="text-col">
+        <span class="text-tag">✦ Mon vœu le plus profond</span>
+        <h2 class="text-heading">
+          Que chaque année<br>
+          soit <em>plus belle</em> que l'autre
+        </h2>
+        <div class="poem-block">
+          <p>
+            Je voudrais que le temps soit doux avec toi,<br>
+            que les années glissent sur toi comme la soie,<br>
+            que chaque matin tu te réveilles légère,<br>
+            avec la santé pour amie et la joie pour sœur.<br><br>
+            Je voudrais te voir sourire encore et encore —<br>
+            ce sourire qui est ma plus grande fortune.
+          </p>
+        </div>
+        <div class="prose-block">
+          <p>
+            Tu mérites une longue vie remplie de moments doux.
+            Une vie où chaque saison t'apporte ce qu'elle a de meilleur :
+            le printemps de la santé, l'été de la joie,
+            l'automne de la sérénité, l'hiver de la paix.
+          </p>
+          <p>
+            Mon vœu le plus sincère, Maman, c'est que tu restes longtemps
+            avec nous. Chaque jour avec toi est un privilège que je ne prends jamais pour acquis.
+          </p>
+        </div>
+        <div class="gold-quote">"Vieillir à tes côtés est un bonheur que je souhaite à chacun."</div>
+      </div>
+    </div>
+
+    <!-- Vitality Banner -->
+    <div class="vitality-banner">
+      <div class="vitality-title">✦ Ce que je te souhaite chaque jour ✦</div>
+      <div class="vitality-icons">
+        <div class="vitality-item">
+          <div class="vitality-icon">💗</div>
+          <div class="vitality-label">Santé</div>
+        </div>
+        <div class="vitality-item">
+          <div class="vitality-icon">🌿</div>
+          <div class="vitality-label">Sérénité</div>
+        </div>
+        <div class="vitality-item">
+          <div class="vitality-icon">☀️</div>
+          <div class="vitality-label">Bonheur</div>
+        </div>
+        <div class="vitality-item">
+          <div class="vitality-icon">🕊️</div>
+          <div class="vitality-label">Paix</div>
+        </div>
+        <div class="vitality-item">
+          <div class="vitality-icon">✨</div>
+          <div class="vitality-label">Lumière</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Wishes -->
+    <h2 class="text-heading" style="text-align:center; margin-bottom:2rem;">
+      Mes <em>10 vœux</em> pour ta longue vie
+    </h2>
+    <div class="wishes-tree">
+      <div class="wish-leaf" data-number="1">
+        <span class="wish-leaf-icon">🌹</span>
+        <div class="wish-leaf-title">La santé fleurissante</div>
+        <div class="wish-leaf-text">Que ton corps soit fort et léger, que chaque matin soit un nouveau départ plein d'énergie.</div>
+      </div>
+      <div class="wish-leaf" data-number="2">
+        <span class="wish-leaf-icon">😴</span>
+        <div class="wish-leaf-title">Le sommeil paisible</div>
+        <div class="wish-leaf-text">Que tes nuits soient douces et reposantes, sans soucis, sans douleurs — juste du calme.</div>
+      </div>
+      <div class="wish-leaf" data-number="3">
+        <span class="wish-leaf-icon">🍃</span>
+        <div class="wish-leaf-title">La légèreté du cœur</div>
+        <div class="wish-leaf-text">Que rien ne pèse trop lourd sur toi, que chaque fardeau trouve quelqu'un pour t'aider à le porter.</div>
+      </div>
+      <div class="wish-leaf" data-number="4">
+        <span class="wish-leaf-icon">🌸</span>
+        <div class="wish-leaf-title">La beauté qui dure</div>
+        <div class="wish-leaf-text">Ta beauté vient de l'intérieur — elle ne vieillit jamais. Qu'elle rayonne encore longtemps.</div>
+      </div>
+      <div class="wish-leaf" data-number="5">
+        <span class="wish-leaf-icon">👨‍👩‍👧‍👦</span>
+        <div class="wish-leaf-title">L'entourage aimant</div>
+        <div class="wish-leaf-text">Que tu sois toujours entourée de ceux qui t'aiment et qui prennent soin de toi.</div>
+      </div>
+      <div class="wish-leaf" data-number="6">
+        <span class="wish-leaf-icon">🌊</span>
+        <div class="wish-leaf-title">La sérénité profonde</div>
+        <div class="wish-leaf-text">Que la paix soit ton état naturel, que rien ne trouble durablement ton âme douce.</div>
+      </div>
+      <div class="wish-leaf" data-number="7">
+        <span class="wish-leaf-icon">🌙</span>
+        <div class="wish-leaf-title">La foi lumineuse</div>
+        <div class="wish-leaf-text">Que ta foi soit ton bouclier et ta consolation, un phare dans chaque obscurité.</div>
+      </div>
+      <div class="wish-leaf" data-number="8">
+        <span class="wish-leaf-icon">🎶</span>
+        <div class="wish-leaf-title">La joie des petits riens</div>
+        <div class="wish-leaf-text">Que le thé chaud du matin, le rire d'un enfant, un beau coucher de soleil te comblent encore.</div>
+      </div>
+      <div class="wish-leaf" data-number="9">
+        <span class="wish-leaf-icon">🌺</span>
+        <div class="wish-leaf-title">Les voyages beaux</div>
+        <div class="wish-leaf-text">Que tu puisses encore voir des endroits merveilleux, goûter à de nouvelles saveurs, t'émerveiller.</div>
+      </div>
+      <div class="wish-leaf" data-number="10">
+        <span class="wish-leaf-icon">💫</span>
+        <div class="wish-leaf-title">Une belle fin</div>
+        <div class="wish-leaf-text">Que le dernier chapitre de ta vie soit le plus serein — entourée d'amour, en paix avec tout.</div>
+      </div>
+    </div>
+
+    <!-- Timeline of life -->
+    <h2 class="text-heading" style="text-align:center; margin: 3rem 0 2rem;">
+      La ligne du temps de <em>ton amour</em>
+    </h2>
+    <div class="timeline" style="max-width: 680px; margin: 0 auto;">
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-year">Avant ma naissance</div>
+        <div class="timeline-text">Tu m'aimais déjà, avant même de me connaître. Cet amour qui précède tout.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-year">Mon enfance</div>
+        <div class="timeline-text">Des milliers de nuits veillées, des genoux bandés, des larmes séchées. Ta patience n'avait pas de limite.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-year">Mon adolescence</div>
+        <div class="timeline-text">Tu as su être à la fois ferme et compréhensive. Tu m'as laissé grandir sans me lâcher la main.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-year">Aujourd'hui</div>
+        <div class="timeline-text">Je te regarde et je vois tout ce que tu as accompli, tout ce que tu es. Je suis fier(e) de t'appeler Maman.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-year">Demain & toujours</div>
+        <div class="timeline-text">Que les années à venir soient douces et longues. Je veux t'avoir près de moi le plus longtemps possible.</div>
+      </div>
+    </div>
+
+    <div class="poem-block" style="max-width:680px; margin: 3rem auto 0;">
+      <p style="text-align:center;">
+        Alors vis longtemps, Maman.<br>
+        Vis pour voir nos enfants grandir,<br>
+        pour goûter encore mille repas ensemble,<br>
+        pour recevoir encore mille "je t'aime".<br><br>
+        Le monde est meilleur parce que tu y es.<br>
+        Et nous, on a besoin de toi encore longtemps.
+      </p>
+    </div>
+  </section>
+
+  <section class="surprise-section">
+    <button id="btn-surprise">💌 Message surprise pour Maman</button>
+    <div id="surprise-message"></div>
+  </section>
+
+  <div class="page-nav-footer">
+    <a class="btn-nav" href="priere.html">← Prière</a>
+    <a class="btn-nav" href="final.html">✦ Message Final →</a>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+<script>
+  // ── Slideshow automatique ──
+  (function () {
+    const slides = document.querySelectorAll('.slideshow-container .slide');
+    let current = 0;
+
+    setInterval(() => {
+      slides[current].classList.remove('active');
+      current = (current + 1) % slides.length;
+      slides[current].classList.add('active');
+    }, 3500); // change toutes les 3,5 secondes
+  })();
+
+  // ── Animate timeline items on scroll ──
+  const tlItems = document.querySelectorAll('.timeline-item');
+  const tlObs = new IntersectionObserver(entries => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('visible'), i * 150);
+      }
+    });
+  }, { threshold: 0.2 });
+  tlItems.forEach(el => tlObs.observe(el));
+
+  // ── Animate wish leaves ──
+  const leaves = document.querySelectorAll('.wish-leaf');
+  const leafObs = new IntersectionObserver(entries => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('visible'), i * 100);
+      }
+    });
+  }, { threshold: 0.1 });
+  leaves.forEach(el => leafObs.observe(el));
+</script>
+</body>
+</html>

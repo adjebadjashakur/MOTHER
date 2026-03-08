@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pour Maman — Message Final ✦</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .final-wrapper {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 3rem 2rem 6rem;
+      text-align: center;
+    }
+
+    .final-envelope {
+      background: rgba(255,255,255,0.85);
+      border-radius: 32px;
+      padding: 3.5rem 3rem;
+      box-shadow: 0 20px 80px rgba(180,100,130,0.2);
+      border: 1px solid rgba(249,198,211,0.5);
+      backdrop-filter: blur(12px);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .final-envelope::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 6px;
+      background: linear-gradient(90deg, var(--rose-deep), var(--gold), var(--violet-deep));
+    }
+
+    .final-letter {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.1rem, 2.5vw, 1.35rem);
+      line-height: 2.1;
+      color: var(--text-mid);
+      text-align: left;
+      margin: 2rem 0;
+    }
+
+    .final-letter p { margin-bottom: 1.5rem; }
+
+    .final-letter strong {
+      font-weight: 600;
+      color: var(--text-dark);
+    }
+
+    .final-signature {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem;
+      font-style: italic;
+      color: var(--rose-deep);
+      text-align: right;
+      margin-top: 2.5rem;
+    }
+
+    .final-date {
+      font-size: 0.82rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-light);
+      text-align: right;
+      margin-top: 0.4rem;
+    }
+
+    .final-seal {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, var(--rose-deep), var(--violet-deep));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.2rem;
+      margin: 2.5rem auto 0;
+      box-shadow: 0 8px 30px rgba(155,121,196,0.4);
+      animation: rotate-slow 20s linear infinite;
+    }
+
+    @keyframes rotate-slow {
+      from { transform: rotate(0deg); }
+      to   { transform: rotate(360deg); }
+    }
+
+    .final-pages-recap {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.7rem;
+      margin: 3rem 0;
+    }
+
+    .recap-pill {
+      background: rgba(255,255,255,0.8);
+      border: 1px solid rgba(201,168,76,0.3);
+      border-radius: 30px;
+      padding: 0.5rem 1.2rem;
+      font-size: 0.82rem;
+      font-family: 'Lato', sans-serif;
+      color: var(--text-mid);
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .recap-pill:hover {
+      background: linear-gradient(135deg, var(--rose), var(--violet));
+      color: white;
+      border-color: transparent;
+      transform: translateY(-2px);
+    }
+
+    .final-outro {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      font-style: italic;
+      color: var(--text-light);
+      margin-top: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" href="accueil.html">Pour <span>Maman</span></a>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="accueil.html">Accueil</a></li>
+      <li><a href="femme.html">8 Mars</a></li>
+      <li><a href="anniversaire.html">Anniversaire</a></li>
+      <li><a href="maman.html">Maman</a></li>
+      <li><a href="souvenirs.html">Souvenirs</a></li>
+      <li><a href="gratitude.html">Gratitude</a></li>
+      <li><a href="sagesse.html">Sagesse</a></li>
+      <li><a href="amour.html">Amour</a></li>
+      <li><a href="priere.html">🤲 Prière</a></li>
+      <li><a href="longevite.html">🌿 Longévité</a></li>
+      <li><a href="final.html">✦ Final</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="page-wrapper">
+
+  <section class="hero-banner">
+    <div class="hero-badge">✦ Message du cœur</div>
+    <h1 class="hero-title">
+      <em>Ma lettre</em><br>
+      pour toi, Maman
+    </h1>
+    <p class="hero-subtitle">Quelques mots qui viennent du plus profond de mon âme</p>
+    <span class="final-heart">💝</span>
+    <div class="hero-divider"><span>✦</span></div>
+  </section>
+
+  <div class="final-wrapper">
+    <div class="final-envelope content-grid" style="display:block; opacity:0; transform:translateY(30px);">
+
+      <div class="final-letter">
+        <p>Chère Maman,</p>
+
+        <p>
+          Ce site est une lettre — une lettre que j'aurais dû t'écrire mille fois,
+          mais que les mots de tous les jours ne suffisaient jamais à exprimer.
+          Alors j'ai décidé de la construire, page par page, pour que tu puisses y revenir
+          autant de fois que tu le souhaiteras.
+        </p>
+
+        <p>
+          <strong>Le 8 mars</strong>, quand le monde célèbre les femmes,
+          je pense à toi en premier. Parce que tu es la femme qui m'a tout appris
+          sur ce que signifie être fort, être doux, être entier.
+        </p>
+
+        <p>
+          <strong>Le 9 mars</strong>, le jour de ta naissance, je réalise une fois de plus
+          que ce jour-là, c'est moi qui ai reçu le plus beau des cadeaux :
+          la chance de t'avoir comme maman.
+          Joyeux anniversaire, toi qui es irremplaçable.
+        </p>
+
+        <p>
+          <strong>Le 10 mai</strong>, à la fête des mères, tous les enfants du monde
+          cherchent des mots pour honorer leur maman.
+          Moi, je sais que les miens ne suffiront jamais.
+          Alors je te donne quelque chose de plus long qu'une carte : ce site.
+          Un endroit où tu peux sentir, chaque fois que tu l'ouvres,
+          à quel point tu es aimée.
+        </p>
+
+        <p>
+          Maman, tu m'as construit. Brique par brique, câlin après câlin,
+          conseil après conseil. Tout ce que je suis de bien, je l'ai appris de toi.
+          Et tout ce que j'espère devenir, c'est pour te rendre fière.
+        </p>
+
+        <p>
+          Il y a des amours qui ne trouvent pas leurs mots.
+          Le mien pour toi est de ceux-là.
+          Alors prends ces pages, ces poèmes, ces images,
+          et sache qu'ils n'en disent qu'une infime partie.
+        </p>
+
+        <p>
+          Je t'aime, Maman. Aujourd'hui. Demain.
+          Et dans toutes les vies qui pourraient suivre celle-ci.
+        </p>
+      </div>
+
+      <div class="final-signature">Avec tout mon amour, pour toujours ✦</div>
+      <div class="final-date">8 Mars · 9 Mars · 10 Mai — Trois célébrations, un seul amour</div>
+
+      <div class="final-seal">💌</div>
+    </div>
+
+    <!-- Recap navigation -->
+    <div class="final-pages-recap">
+      <a class="recap-pill" href="accueil.html">🏠 Accueil</a>
+      <a class="recap-pill" href="femme.html">🌍 8 Mars</a>
+      <a class="recap-pill" href="anniversaire.html">🎂 Anniversaire</a>
+      <a class="recap-pill" href="maman.html">💐 Maman</a>
+      <a class="recap-pill" href="souvenirs.html">📸 Souvenirs</a>
+      <a class="recap-pill" href="gratitude.html">🙏 Gratitude</a>
+      <a class="recap-pill" href="sagesse.html">🌿 Sagesse</a>
+      <a class="recap-pill" href="amour.html">❤️ Amour</a>
+      <a class="recap-pill" href="priere.html">🤲 Prière</a>
+      <a class="recap-pill" href="longevite.html">🌿 Longévité</a>
+    </div>
+
+    <p class="final-outro">
+      🌸 Ce site est un cadeau. Referme-le avec ton cœur plein. 🌸
+    </p>
+  </div>
+
+  <section class="surprise-section">
+    <button id="btn-surprise">💌 Encore un message surprise pour Maman</button>
+    <div id="surprise-message"></div>
+  </section>
+
+  <div class="page-nav-footer">
+    <a class="btn-nav" href="amour.html">← Amour</a>
+    <a class="btn-nav" href="accueil.html">↺ Recommencer depuis le début</a>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
